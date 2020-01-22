@@ -11,6 +11,7 @@ Router.map(function() {
   this.route('trend');
   this.route('newest');
   this.route('top');
+  this.route('search');
 });
 
 export default Router;

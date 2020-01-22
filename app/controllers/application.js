@@ -3,7 +3,6 @@ import {
   A
 } from '@ember/array';
 import EmberObject from '@ember/object';
-import { debounce } from '@ember/runloop';
 import {
   inject as service
 } from '@ember/service';
@@ -30,14 +29,10 @@ export default Controller.extend({
   ]),
   actions: {
     async search() {
-      debounce(this, async function () {
-        let searchInput = this.get('searchInput');
-        if (searchInput && searchInput.length > 2) {
-          let results = await this.get('api').fetch('https://api.themoviedb.org/3/search/movie', {
-            query: searchInput
-          });
-        }
-      }, 300);
+      let searchInput = this.get('searchInput');
+      if (searchInput && searchInput.length > 2) {
+        this.transitionToRoute(`/search?query=${searchInput}`);
+      }
     }
   }
 });
