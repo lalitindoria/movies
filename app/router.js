@@ -7,6 +7,10 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('popular');
+  this.route('trend');
+  this.route('newest');
+  this.route('top');
 });
 
 export default Router;
