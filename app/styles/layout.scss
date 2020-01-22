@@ -1,0 +1,19 @@
+body {
+  background-image: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+  padding-top: 56px;
+
+  .container-fluid {
+
+    .content {
+      padding: 15px;
+      background: black;
+    }
+  }
+
+  .movie-navbar {
+    position: fixed;
+    z-index: 1030;
+    top: 0;
+    width: 100%;
+  }
+}

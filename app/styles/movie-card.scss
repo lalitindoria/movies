@@ -1,0 +1,15 @@
+.movie-list {
+  .card {
+    padding: 15px;
+    background: transparent;
+    .card-heading {
+      padding-top: 10px;
+      h2 {
+        font-size: 1.5rem;
+        color: #3498db;
+        font-weight: 200;
+        text-align: center;
+      }
+    }
+  }
+}

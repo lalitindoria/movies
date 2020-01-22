@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-lg movie-navbar bg-dark navbar-dark">
   <a class="navbar-brand" href="#">Discover</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -7,11 +7,14 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       {{#each supportedRoutes as |route|}}
-        <li class="nav-item">
-          {{#link-to route.route class=(nav-class currentPath route.route)}}{{route.displayName}}{{/link-to}}
-        </li>
+      <li class="nav-item">
+        {{#link-to route.route class=(nav-class currentPath route.route)}}{{route.displayName}}{{/link-to}}
+      </li>
       {{/each}}
     </ul>
+    <form class="form-inline">
+      {{input value=searchInput type='search' placeholder='Search' class='form-control mr-sm-2'}}
+      <button class="btn btn-secondary" {{action 'search'}} type="submit">Search</button>
+    </form>
   </div>
 </nav>
-<h1>{{currentPath}}</h1>
